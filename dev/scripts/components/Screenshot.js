@@ -30,9 +30,3 @@ export default class Screenshot extends React.Component {
 	}
 }
 
-//git remote remove origin
-//git remote -v (should be empty)
-//git remote add origin --insert link to repo--
-//git add
-//git commit
-//git push origin master

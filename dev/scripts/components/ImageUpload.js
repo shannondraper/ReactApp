@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import Screenshot from './Screenshot.js'
 
+// const dbRef = firebase.database().ref('/');
 
 export default class ImageUpload extends React.Component {
 	constructor() {
@@ -20,21 +21,13 @@ export default class ImageUpload extends React.Component {
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChange = this.handleChange.bind(this);
 		this.resetFilters = this.resetFilters.bind(this);
+		this.saveChange = this.saveChange.bind(this);
 	}
 	handleFile(e) {
 		this.setState({
 			value: e.target.value
 		});
 	}
-	
-	// save() {
-	// 	const photo = {
-	// 		url: this.state.photoUrl,
-	// 		contrast: this.state.contrast
-	// 	}
-	// 	dbRef.push(photo);
-	// }
-	// for in over each object, display image on the page
 
 	handleSubmit(e) {
 	    e.preventDefault();
@@ -74,7 +67,21 @@ export default class ImageUpload extends React.Component {
 			[e.target.name]: e.target.value	
 		})
 	}
-
+	saveChange(e) {
+		e.preventDefault();
+		const photoEdit = {
+			url: this.state.currentImage,
+			contrast: this.state.contrast,
+			brightness: this.state.brightness,
+			saturate: this.state.saturate,
+			sepia: this.state.sepia,
+			invert: this.state.invert,
+			blur: this.state.blur
+		}
+		firebase.database().ref('/').push(photoEdit);
+		console.log('its been saved!')
+	}
+	// for in over each object, display image on the page
     render() {
 		return (
 		<div className="ImageUpload">
@@ -159,7 +166,9 @@ export default class ImageUpload extends React.Component {
 				/>
 			</div>
 			<div>
-				<Screenshot />
+				<form onSubmit={this.saveChange}>
+					<input type="submit" value="Save Image"/>
+				</form>
 			</div>
 
 		</div>
