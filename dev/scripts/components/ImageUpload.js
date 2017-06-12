@@ -8,7 +8,6 @@ export default class ImageUpload extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			value: '',
 			currentImage: '',
 			contrast: '100',
 			brightness: '100',
