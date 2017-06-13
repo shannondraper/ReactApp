@@ -1,5 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
+import { 
+    BrowserRouter as Router, 
+    Route, Link } from 'react-router-dom';
 
 export default class ImageDownload extends React.Component {
 	constructor() {

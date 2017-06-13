@@ -10,6 +10,11 @@ body {
 	color: #333;
 	font-family: 'Abel', sans-serif;
 }
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
 .wrapper {
 	max-width: 1200px;
 	width: 90%;
@@ -17,6 +22,9 @@ body {
 	// border: 1px solid blue;
 	position: relative;
 
+}
+.logoBtn {
+	cursor: pointer;
 }
 input[type=submit] {
 	border: 3px solid $primaryBlue;
@@ -63,7 +71,17 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		.navBtn {
+			text-decoration: none;
+			padding: 0 10px;
+			color: #333;
+			height: 100%;
+			&:hover {
+				background-color: $primaryGreen;
+			}
+		}
 	}
+
 }
 .uploadImage {
 	//image uploader buttons
@@ -117,6 +135,13 @@ canvas {
 	max-width: 100%;
 }
 .downloadedImages {
-	border: 2px solid red;
+	// border: 2px solid red;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	li {
+		width: calc(25% - 2%);
+		margin: 1%;
+	}
 	
 }

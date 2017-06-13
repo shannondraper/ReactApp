@@ -4,6 +4,9 @@ import $ from 'jquery';
 import config from './common/config.js';
 import ImageUpload from './components/ImageUpload.js'
 import ImageDownload from './components/ImageDownload.js'
+import { 
+    BrowserRouter as Router, 
+    Route, Link } from 'react-router-dom';
 
 
 //Set up firebase database
@@ -14,10 +17,38 @@ const dbRef = firebase.database().ref('/');
 class App extends React.Component {
     render() {
       return (
-      	<div className="mainPhoto">
-      		  <ImageUpload />
-      		  <ImageDownload />
-       	</div>
+      	<Router>
+	      	<div className="mainPhoto">
+	      		<nav>
+	      			<ul>
+	      				<li>
+	      					<a href="/home" className="logoBtn"><img src="dev/assets/logo.png" alt="logo" /></a>
+	      				</li>
+	      				<li>
+	      					<h1>FILTER</h1>
+	      				</li>
+
+	      				<li>
+	      					<ul>
+	      						<li className="navBtn"><Link to="/home">EDIT</Link></li>
+	      						<li className="navBtn"><Link to="/view">VIEW POSTS</Link></li>
+	      					</ul>
+	      				</li>
+	      				
+	      			</ul>
+	      		</nav>
+	      		<div className="edit wrapper">
+	      			<Route path="/home" component={ImageUpload} />
+	      		</div>
+	      		<div className="view">
+	      			<Route path="/view" component={ImageDownload} />
+	      		</div>
+	      		
+	      		
+
+
+	       	</div>
+      	</Router>
       )
     }
 }

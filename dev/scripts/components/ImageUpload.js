@@ -1,6 +1,9 @@
 import React from 'react';
 import $ from 'jquery';
 import Screenshot from './Screenshot.js'
+import { 
+    BrowserRouter as Router, 
+    Route, Link } from 'react-router-dom';
 
 // const dbRef = firebase.database().ref('/');
 
@@ -88,65 +91,70 @@ export default class ImageUpload extends React.Component {
 				<input type="file" ref={(ref)=> {this.file = ref}}/>
 				<input type="submit" value="upload" />
 			</form>
-			<form className="filters" onSubmit={this.resetFilters}>
-				<h4>Contrast:</h4>
-				<input
-					type="range" 
-					name="contrast"
-					value={this.state.contrast}
-					min="0"
-					max="200"
-					onChange={this.handleChange}
-				/>
-				<h4>Brightness:</h4>
-				<input
-					type="range" 
-					name="brightness"
-					value={this.state.brightness}
-					min="0"
-					max="200"
-					onChange={this.handleChange}
-				/>
-				<h4>Saturation:</h4>
-				<input
-					type="range" 
-					name="saturate"
-					value={this.state.saturate}
-					min="0"
-					max="200"
-					onChange={this.handleChange}
-				/>
-				<h4>Sepia:</h4>
-				<input
-					type="range" 
-					name="sepia"
-					value={this.state.sepia}
-					min="0"
-					max="100"
-					onChange={this.handleChange}
-				/>
-				<h4>Invert:</h4>
-				<input
-					type="range" 
-					name="invert"
-					value={this.state.invert}
-					min="0"
-					max="100"
-					onChange={this.handleChange}
-				/>
-				<h4>Blur:</h4>
-				<input
-					type="range" 
-					name="blur"
-					value={this.state.blur}
-					min="0"
-					max="10"
-					onChange={this.handleChange}
-				/>
-				<div className="resetBtn">
-					<input type="submit" value="RESET" />
-				</div>
-			</form>
+			<div className="filters">
+				<form onSubmit={this.resetFilters}>
+					<h4>Contrast:</h4>
+					<input
+						type="range" 
+						name="contrast"
+						value={this.state.contrast}
+						min="0"
+						max="200"
+						onChange={this.handleChange}
+					/>
+					<h4>Brightness:</h4>
+					<input
+						type="range" 
+						name="brightness"
+						value={this.state.brightness}
+						min="0"
+						max="200"
+						onChange={this.handleChange}
+					/>
+					<h4>Saturation:</h4>
+					<input
+						type="range" 
+						name="saturate"
+						value={this.state.saturate}
+						min="0"
+						max="200"
+						onChange={this.handleChange}
+					/>
+					<h4>Sepia:</h4>
+					<input
+						type="range" 
+						name="sepia"
+						value={this.state.sepia}
+						min="0"
+						max="100"
+						onChange={this.handleChange}
+					/>
+					<h4>Invert:</h4>
+					<input
+						type="range" 
+						name="invert"
+						value={this.state.invert}
+						min="0"
+						max="100"
+						onChange={this.handleChange}
+					/>
+					<h4>Blur:</h4>
+					<input
+						type="range" 
+						name="blur"
+						value={this.state.blur}
+						min="0"
+						max="10"
+						onChange={this.handleChange}
+					/>
+					<div className="resetBtn">
+						<input type="submit" value="RESET" />
+					</div>
+				</form>
+				<form onSubmit={this.saveChange}>
+					<input type="submit" value="Save Image"/>
+				</form>
+			</div>
 
 			<div className="imgContainer">
 				<div className="loader">
@@ -165,9 +173,7 @@ export default class ImageUpload extends React.Component {
 				/>
 			</div>
 			<div>
-				<form onSubmit={this.saveChange}>
-					<input type="submit" value="Save Image"/>
-				</form>
+				
 			</div>
 
 		</div>
