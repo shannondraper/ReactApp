@@ -30,7 +30,7 @@ class App extends React.Component {
 
 	      				<li>
 	      					<ul>
-	      						<li><Link to="/home" className="navBtn">EDIT</Link></li>
+	      						<li><Link to="/" className="navBtn">EDIT</Link></li>
 	      						<li><Link to="/view" className="navBtn">VIEW POSTS</Link></li>
 	      					</ul>
 	      				</li>
@@ -38,7 +38,7 @@ class App extends React.Component {
 	      			</ul>
 	      		</nav>
 	      		<div className="edit wrapper">
-	      			<Route path="/home" component={ImageUpload} />
+	      			<Route exact path="/" component={ImageUpload} />
 	      		</div>
 	      		<div className="view">
 	      			<Route path="/view" component={ImageDownload} />
