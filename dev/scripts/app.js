@@ -30,8 +30,8 @@ class App extends React.Component {
 
 	      				<li>
 	      					<ul>
-	      						<li className="navBtn"><Link to="/home">EDIT</Link></li>
-	      						<li className="navBtn"><Link to="/view">VIEW POSTS</Link></li>
+	      						<li><Link to="/home" className="navBtn">EDIT</Link></li>
+	      						<li><Link to="/view" className="navBtn">VIEW POSTS</Link></li>
 	      					</ul>
 	      				</li>
 	      				
@@ -43,10 +43,6 @@ class App extends React.Component {
 	      		<div className="view">
 	      			<Route path="/view" component={ImageDownload} />
 	      		</div>
-	      		
-	      		
-
-
 	       	</div>
       	</Router>
       )

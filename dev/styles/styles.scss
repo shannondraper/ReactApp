@@ -1,11 +1,12 @@
+@import "./partials/setup";
 $primaryGreen: #91f8b9;
 $primaryBlue: #65ddf2;
 $primaryPurple: #915fed;
 
-
+//GENERAL STYLING /////////////////////
 body {
 	font-family: sans-serif;
-	height: 100vh;
+	// height: 100vh;
 	margin: 0;
 	color: #333;
 	font-family: 'Abel', sans-serif;
@@ -16,52 +17,30 @@ ul {
 	padding: 0;
 }
 .wrapper {
-	max-width: 1200px;
+	max-width: 1100px;
 	width: 90%;
 	margin: 0 auto;
-	// border: 1px solid blue;
 	position: relative;
-
-}
-.logoBtn {
-	cursor: pointer;
-}
-input[type=submit] {
-	border: 3px solid $primaryBlue;
-	cursor: pointer;
-	width: 100px;
-	background-color: #fff;
-	padding: 7px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-size: 12px;
-	transition: 0.3s all ease;
-	&:hover {
-		background-color: $primaryBlue;
-		color: white;
-	}
 }
 img {
 	max-width: 100%;
-
+	border: 0;
 }
 h1 {
 	margin: 0;
 	letter-spacing: 2px;
 	font-size: 22px;
 }
-h4 {
+h2 {
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	// font-weight: 400;
 }
 
 nav {
 	width: 100%;
-	// padding: 15px;
 	z-index: 10;
 	box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.2);
 	ul {
@@ -83,59 +62,96 @@ nav {
 	}
 
 }
-.uploadImage {
-	//image uploader buttons
-	margin: 25px 0;
-	// border: 2px solid blue;
-	
-}
-.filters {
-	
-	position: absolute;
-	right: 0;
-	width: 30%;
-	// border: 2px solid red;
-	input[type=range] {
-		width: 100%;
-		margin-bottom: 20px;
-	}
-	div.resetBtn {
-		display: flex;
-		justify-content: flex-end;
-	}
-
-}
-.imgContainer {
-	// border: 2px solid green;
-	max-width: 750px;
-	img {
-		max-width: 750px;
-		height: 100%;
-		max-height: 500px;
-	}
-}
-
 .ImageUpload {
-	// border: 2px solid pink;
+	border: 2px solid yellow;
 }
-.loader {
-	width: 750px;
-	height: 500px;
-	background-color: pink;
-	display: none;
 
+
+/////////////////////////////////////////
+
+
+.uploadImage {
+	margin: 25px 0;
+	position: relative;
+	input {
+		width: 200px;
+	}
 }
-.screenshotContainer {
-	// width: 1000px;
-	// height: 1000px;
-	// border: 2px solid red;
+.canvas {
+	display: flex;
+	justify-content: space-between;
+	.imgContainer {
+		width: 65%;
+		height: 500px;
+		img {
+			max-height: 500px;
+		}
+	}
+
+	.sideBar {
+		display: flex;
+		flex-direction: column;
+		width: 30%;
+		input[type=range] {
+			width: 100%;
+			max-width: 350px;
+			margin-bottom: 20px;
+		}
+		.buttonContainer {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+	}
+	
 }
-canvas {
-	max-height: 100%;
-	max-width: 100%;
+
+
+// SIDE BAR ////////////////////////
+
+
+// BUTTON STYLING //////////////////
+.logoBtn {
+	cursor: pointer;
 }
+input[type=submit] {
+	cursor: pointer;
+	width: 100px;
+	background-color: #fff;
+	padding: 7px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	transition: 0.3s all ease;
+	&:hover {
+		color: white;
+	}
+}
+.uploadBtn {
+	border: 3px solid $primaryBlue;
+	&:hover {
+		background-color: $primaryBlue;
+		color: white;
+	}
+}
+.resetBtn {
+	border: 3px solid $primaryPurple;
+	&:hover {
+		background-color: $primaryPurple;
+		color: white;
+	}
+}
+.saveBtn {
+	border: 3px solid $primaryGreen;
+	&:hover {
+		background-color: $primaryGreen;
+		color: white;
+	}
+}
+
+
+// VIEW POSTS ROUTE /////////////////////
 .downloadedImages {
-	// border: 2px solid red;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -144,4 +160,51 @@ canvas {
 		margin: 1%;
 	}
 	
+}
+
+// MEDIA QUERIES!!! //////////////////////
+@media (max-width: 767px) {
+	.canvas {
+		flex-direction: column;
+		.imgContainer {
+			width: 100%;
+			height: 400px;
+			margin-bottom: 2%;
+			img {
+				max-height: 400px;
+			}
+		}
+		.sideBar {
+			width: 100%;
+			.filters {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				div {
+					width: 47%;
+				}
+			} 
+			.buttonContainer {
+				justify-content: space-around;
+			}
+		}
+	}
+}
+@media (max-width: 480px) {
+	h1 {
+		display: none;
+	}
+	.canvas {
+		flex-direction: column;
+		.imgContainer {
+			width: 100%;
+			height: 340px;
+			margin-bottom: 2%;
+
+			img {
+				max-height: 340px;
+			}
+		}
+	}
 }
