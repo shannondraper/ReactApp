@@ -1,6 +1,5 @@
 import React from 'react';
 import $ from 'jquery';
-import firebase from 'firebase';
 import { 
     BrowserRouter as Router, 
     Route, Link } from 'react-router-dom';
@@ -88,7 +87,7 @@ export default class ImageUpload extends React.Component {
 		return (
 			<div>
 
-				<div className="uploadImage" >
+				<div  className="uploadImage" >
 					<form onSubmit={this.handleSubmit}>
 						<input type="file" ref={(ref)=> {this.file = ref}}/>
 						<input className="uploadBtn" type="submit" value="upload" />
@@ -188,8 +187,10 @@ export default class ImageUpload extends React.Component {
 						</div>
 
 					</div> {/*closes SideBar */}
+					
+
 				</div> {/*closes Canvas */}
-			</div> /*closes div daddy */
+			</div>
 		)
     }
 }
