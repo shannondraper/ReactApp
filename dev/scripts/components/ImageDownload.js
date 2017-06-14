@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import firebase from 'firebase';
 import { 
     BrowserRouter as Router, 
     Route, Link } from 'react-router-dom';
