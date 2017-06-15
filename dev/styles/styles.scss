@@ -50,21 +50,81 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		.navBtn {
+		.Link {
 			text-decoration: none;
-			padding: 0 10px;
-			color: #333;
-			height: 100%;
+			padding: 0 15px;
+			margin: 0 5px;
 			&:hover {
 				background-color: $primaryGreen;
 			}
 		}
+		.logOutBtn {
+			text-transform: uppercase;
+			border: 0;
+			padding: 5px 20px;
+			-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.25);
+			margin-left: 10px;
+		}
 	}
-
 }
 .ImageUpload {
 	border: 2px solid yellow;
 }
+
+// LOG IN PAGE ///////////////////////////////////////
+.logInPage {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#915fed+5,7d96e8+24,5fbff8+46,65ddf2+59,66f9f1+76,91f8b9+100 */
+	background: rgb(145,95,237); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(145,95,237,1) 5%, rgba(125,150,232,1) 24%, rgba(95,191,248,1) 46%, rgba(101,221,242,1) 59%, rgba(102,249,241,1) 76%, rgba(145,248,185,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(145,95,237,1) 5%,rgba(125,150,232,1) 24%,rgba(95,191,248,1) 46%,rgba(101,221,242,1) 59%,rgba(102,249,241,1) 76%,rgba(145,248,185,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(145,95,237,1) 5%,rgba(125,150,232,1) 24%,rgba(95,191,248,1) 46%,rgba(101,221,242,1) 59%,rgba(102,249,241,1) 76%,rgba(145,248,185,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#915fed', endColorstr='#91f8b9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+	h1 {
+		margin: 0;
+		letter-spacing: 1px;
+		font-size: 36px;
+	}
+	
+	.logInContainer {
+		background-color: rgba(255,255,255,.9);
+		padding: 40px 80px;
+		color: $primaryPurple;
+		text-transform: uppercase;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		-webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
+		-moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
+		box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
+		img {
+			padding: 30px 0;
+		}
+		button {
+			border: 3px solid $primaryPurple;
+			text-transform: uppercase;
+			color: $primaryPurple;
+			background-color: transparent;
+			padding: 8px 20px;
+			transition: 0.3s all ease;
+			margin-top: 10px;
+			font-size: 18px;
+			&:hover {
+				background-color: $primaryPurple;
+				color: white;
+			}
+		}
+	}
+}
+
+
 
 
 /////////////////////////////////////////
@@ -107,7 +167,6 @@ nav {
 }
 
 
-// SIDE BAR ////////////////////////
 
 
 // BUTTON STYLING //////////////////
@@ -121,7 +180,7 @@ input[type=submit] {
 	padding: 7px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 12px;
+	font-size: 14px;
 	transition: 0.3s all ease;
 	&:hover {
 		color: white;
@@ -134,6 +193,10 @@ input[type=submit] {
 		color: white;
 	}
 }
+.uploadFile {
+	// border: 2px solid red;
+}
+
 .resetBtn {
 	border: 3px solid $primaryPurple;
 	&:hover {

@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import firebase from 'firebase';
 import { 
     BrowserRouter as Router, 
     Route, Link } from 'react-router-dom';
@@ -23,6 +24,12 @@ export default class ImageUpload extends React.Component {
 		this.handleChange = this.handleChange.bind(this);
 		this.resetFilters = this.resetFilters.bind(this);
 		this.saveChange = this.saveChange.bind(this);
+
+
+	const auth = firebase.auth();
+	//provider is giving us access to googleAuth in our application
+	const provider = new firebase.auth.GoogleAuthProvider();
+	const dbRef = firebase.database().ref('/');
 	}
 	handleFile(e) {
 		this.setState({
@@ -87,16 +94,14 @@ export default class ImageUpload extends React.Component {
 		return (
 			<div>
 
-				<div  className="uploadImage" >
+				<div className="uploadImage" >
 					<form onSubmit={this.handleSubmit}>
-						<input type="file" ref={(ref)=> {this.file = ref}}/>
+						<input className="uploadFile" type="file" ref={(ref)=> {this.file = ref}}/>
 						<input className="uploadBtn" type="submit" value="upload" />
 					</form>
 				</div>
 
-
 				<div className="canvas">
-
 					<div className="imgContainer">
 						<img 
 							src={this.state.currentImage} 
@@ -187,10 +192,8 @@ export default class ImageUpload extends React.Component {
 						</div>
 
 					</div> {/*closes SideBar */}
-					
-
 				</div> {/*closes Canvas */}
-			</div>
+			</div> /*closes div daddy */
 		)
     }
 }

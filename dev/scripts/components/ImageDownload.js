@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import firebase from 'firebase';
 import { 
     BrowserRouter as Router, 
     Route, Link } from 'react-router-dom';
@@ -10,9 +11,9 @@ export default class ImageDownload extends React.Component {
 		this.state = {
 			filterData: []
 		}
-		// this.getImages = this.getImages.bind(this);
 	}
 	componentDidMount() {
+		//takes filter values of user's edited images and stores them in firebase database with a key.
 		const imageRef = firebase.database().ref('/');
 		imageRef.on('value', (snapshot) => {
 			const userImages = snapshot.val();
@@ -22,7 +23,7 @@ export default class ImageDownload extends React.Component {
 					key: key,
 					singleData: userImages[key]
 				})
-				console.log(key, userImages[key]);
+				// console.log(key, userImages[key]);
 			}
 			this.setState({
 				filterData
