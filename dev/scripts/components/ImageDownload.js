@@ -45,8 +45,7 @@ export default class ImageDownload extends React.Component {
 									`brightness(${filter.brightness}%)` +
 									`saturate(${filter.saturate}%)` +
 									`sepia(${filter.sepia}%)` +
-									`invert(${filter.invert}%)` + 
-									`blur(${filter.blur}px)`
+									`invert(${filter.invert}%)` 
 								}}
 							/>
 						</li>
