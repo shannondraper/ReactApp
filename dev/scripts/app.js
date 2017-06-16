@@ -96,7 +96,7 @@ export default class App extends React.Component {
 								<a href="/" className="logoBtn"><img src="dev/assets/logo.png" alt="logo" /></a>
 							</li>
 							<li>
-								<h1>FILTER</h1>
+								<h1>Filtergram</h1>
 							</li>
 							<li>
 								<Link className="Link" to="/">EDIT</Link>
@@ -111,6 +111,9 @@ export default class App extends React.Component {
 							<Route path="/view" component={ImageDownload} />
 						</div>
 		      		</div>
+		      		<footer className="wrapper">
+		      			<span><a href="http://shannondraper.com/">Shannon Draper 2017 &copy;</a></span>
+		      		</footer>
 		       	</div>
 		      )
     		} else {
@@ -118,7 +121,8 @@ export default class App extends React.Component {
     				//if logged in is NOT true, show log in button only.
     				<div className="logInPage">
     					<div className="logInContainer">
-	    					<h1>FILTER</h1>
+	    					<h1>Filtergram
+	    					</h1>
 	    					<img src="dev/assets/logo.png" alt="logo" />
 	    					<button onClick={this.login}>Log In</button>
     					</div>

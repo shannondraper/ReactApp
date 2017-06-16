@@ -6,11 +6,26 @@ $primaryPurple: #915fed;
 
 //GENERAL STYLING /////////////////////
 body {
-	font-family: sans-serif;
-	// height: 100vh;
 	margin: 0;
 	color: #333;
 	font-family: 'Abel', sans-serif;
+}
+footer {
+	display: flex;
+	justify-content: flex-end;
+	margin: 10px;
+		a {
+		text-decoration: none;
+		font-family: 'Playfair Display', serif;
+		font-weight: 400;
+		font-style: italic;
+		text-align: right;
+
+		color: #333;
+		&:hover {
+			background-color: $primaryGreen;
+		}
+	}
 }
 ul {
 	list-style-type: none;
@@ -31,11 +46,15 @@ h1 {
 	margin: 0;
 	letter-spacing: 2px;
 	font-size: 22px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+	font-style: italic;
+	padding-left: 74px; 
 }
 h2 {
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
+	font-size: 16px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
@@ -91,14 +110,13 @@ nav {
 	h1 {
 		margin: 0;
 		letter-spacing: 1px;
-		font-size: 36px;
+		font-size: 30px;
 	}
 	
 	.logInContainer {
 		background-color: rgba(255,255,255,.9);
 		padding: 40px 80px;
 		color: $primaryPurple;
-		text-transform: uppercase;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
@@ -158,8 +176,8 @@ nav {
 		width: 30%;
 		input[type=range] {
 			width: 100%;
-			max-width: 350px;
-			margin-bottom: 20px;
+			// max-width: 350px;
+			margin-bottom: 30px;
 		}
 		.buttonContainer {
 			display: flex;
@@ -184,7 +202,7 @@ input[type=submit] {
 	padding: 7px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
-	font-size: 14px;
+	font-size: 16px;
 	transition: 0.3s all ease;
 	&:hover {
 		color: white;
@@ -260,10 +278,11 @@ input[type=submit] {
 			.filters {
 				width: 100%;
 				display: flex;
-				flex-direction: row;
+				flex-direction: column;
 				justify-content: space-between;
 				div {
-					width: 47%;
+					width: 100%;
+
 				}
 			} 
 			.buttonContainer {
