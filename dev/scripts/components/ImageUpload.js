@@ -16,8 +16,7 @@ export default class ImageUpload extends React.Component {
 			brightness: '100',
 			saturate: '100',
 			sepia: '0',
-			invert: '0',
-			blur: '0'
+			invert: '0'
 		}
 		this.handleFile = this.handleFile.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -66,8 +65,7 @@ export default class ImageUpload extends React.Component {
 			brightness: '100',
 			saturate: '100',
 			sepia: '0',
-			invert: '0',
-			blur: '0'
+			invert: '0'
 		})
 	}
 	handleChange(e) {
@@ -83,8 +81,7 @@ export default class ImageUpload extends React.Component {
 			brightness: this.state.brightness,
 			saturate: this.state.saturate,
 			sepia: this.state.sepia,
-			invert: this.state.invert,
-			blur: this.state.blur
+			invert: this.state.invert
 		}
 		firebase.database().ref('/').push(photoEdit);
 		console.log('its been saved!')
@@ -103,16 +100,17 @@ export default class ImageUpload extends React.Component {
 
 				<div className="canvas">
 					<div className="imgContainer">
+						<img src="../../../dev/assets/ring-alt.gif" className="loaderAnimation" alt=""/>
 						<img 
 							src={this.state.currentImage} 
 							alt="" 
-							style={{WebkitFilter:
+							style={{
+								WebkitFilter:
 								`contrast(${this.state.contrast}%)` +
 								`brightness(${this.state.brightness}%)` +
 								`saturate(${this.state.saturate}%)` +
 								`sepia(${this.state.sepia}%)` +
-								`invert(${this.state.invert}%)` + 
-								`blur(${this.state.blur}px)`
+								`invert(${this.state.invert}%)`
 							}}
 						/>
 					</div>
@@ -168,15 +166,6 @@ export default class ImageUpload extends React.Component {
 									value={this.state.invert}
 									min="0"
 									max="100"
-									onChange={this.handleChange}
-								/>
-								<h2>Blur:</h2>
-								<input
-									type="range" 
-									name="blur"
-									value={this.state.blur}
-									min="0"
-									max="10"
 									onChange={this.handleChange}
 								/>
 							</div>
