@@ -93,10 +93,10 @@ export default class App extends React.Component {
 					<nav>
 						<ul>
 							<li>
-								<a href="/" className="logoBtn"><img src="dev/assets/logo.png" alt="logo" /></a>
+								<a href="/" className="logoBtn"><img src="dev/assets/logo.png" alt="Filtergram logo" /></a>
 							</li>
 							<li>
-								<h1>Filtergram</h1>
+								<a href="https://filter-react-app.firebaseapp.com"><h1>Filtergram</h1></a>
 							</li>
 							<li>
 								<Link className="Link" to="/">EDIT</Link>

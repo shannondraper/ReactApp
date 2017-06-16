@@ -13,18 +13,27 @@ body {
 footer {
 	display: flex;
 	justify-content: flex-end;
-	margin: 10px;
+	position: absolute; 
+	left: 0;
+	right: 0;
+	bottom: 0; 
+	padding-bottom: 10px;
 		a {
 		text-decoration: none;
 		font-family: 'Playfair Display', serif;
 		font-weight: 400;
 		font-style: italic;
 		text-align: right;
-
 		color: #333;
 		&:hover {
 			background-color: $primaryGreen;
 		}
+	}
+}
+a {
+	text-decoration: none;
+	&:visited {
+		color: #333;
 	}
 }
 ul {
@@ -36,7 +45,7 @@ ul {
 	max-width: 1100px;
 	width: 90%;
 	margin: 0 auto;
-	position: relative;
+	// position: relative;
 }
 img {
 	max-width: 100%;
@@ -49,7 +58,6 @@ h1 {
 	font-family: 'Playfair Display', serif;
 	font-weight: 400;
 	font-style: italic;
-	padding-left: 74px; 
 }
 h2 {
 	margin: 0;
@@ -119,12 +127,16 @@ nav {
 		color: $primaryPurple;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		text-align: center;
 		-webkit-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
 		-moz-box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
 		box-shadow: 0px 0px 8px 3px rgba(0,0,0,0.15);
 		img {
 			padding: 30px 0;
+			max-width: 91px;
+			display: inline-block;
+			margin: 0 auto;
 		}
 		button {
 			border: 3px solid $primaryPurple;
@@ -148,6 +160,11 @@ nav {
 
 /////////////////////////////////////////
 
+.mainPhoto nav {
+	h1 {
+	padding-left: 74px; 
+	}
+}
 
 .uploadImage {
 	margin: 25px 0;
@@ -236,28 +253,28 @@ input[type=submit] {
 
 
 // VIEW POSTS ROUTE /////////////////////
+
 .downloadedImages {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	li {
-		width: calc(25% - 2%);
-		margin: 1%;
-	}
-	
+	margin-top: 10px;
+	-webkit-column-count: 4;
+	-webkit-column-gap:   5px;
+	-moz-column-count:    4;
+	-moz-column-gap:      5px;
+	column-count:         4;
+	column-gap:           5px;  
 }
+
 
 // MEDIA QUERIES!!! //////////////////////
 @media (max-width: 940px) {
 	.downloadedImages {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		li {
-			width: calc(33% - 2%);
-			margin: 1%;
-		}
-		
+	margin-top: 10px;
+	-webkit-column-count: 3;
+	-webkit-column-gap:   5px;
+	-moz-column-count:    3;
+	-moz-column-gap:      5px;
+	column-count:         3;
+	column-gap:           5px;  
 	}
 }
 
@@ -291,18 +308,17 @@ input[type=submit] {
 		}
 	}
 	.downloadedImages {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		li {
-			width: calc(50% - 2%);
-			margin: 1%;
-		}
-		
+		margin-top: 10px;
+		-webkit-column-count: 2;
+		-webkit-column-gap:   5px;
+		-moz-column-count:    2;
+		-moz-column-gap:      5px;
+		column-count:         2;
+		column-gap:           5px;  
 	}
 }
 @media (max-width: 480px) {
-	h1 {
+	nav h1 {
 		display: none;
 	}
 	.canvas {
@@ -318,13 +334,12 @@ input[type=submit] {
 		}
 	}
 	.downloadedImages {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		li {
-			width: 100%;
-			margin: 1%;
-		}
-		
+		margin-top: 10px;
+		-webkit-column-count: 1;
+		-webkit-column-gap:   5px;
+		-moz-column-count:    1;
+		-moz-column-gap:      5px;
+		column-count:         1;
+		column-gap:           5px;  
 	}
 }
